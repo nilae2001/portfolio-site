@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #faf8f5; /* light beige */
+  color: #213547; /* dark text */
+}
+
+/* Colors */
+:root {
+  --color-blue: #2b3990;
+  --color-lightbeige: #faf8f5;
+  --color-darktext: #213547;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-lightbeige);
+  color: var(--color-darktext);
+  max-width: 2000px;
+}
+
+.container {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--color-lightbeige);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-darktext);
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: var(--color-sage);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+/* Burger menu */
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-darktext);
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: var(--color-lightbeige);
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+
+.mobile-menu a {
+  color: var(--color-darktext);
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.hero img {
+  max-width: 300px;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.projects-carousel {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .mobile-menu {
+    display: flex;
+  }
+}

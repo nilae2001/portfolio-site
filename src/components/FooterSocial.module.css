@@ -1,0 +1,31 @@
+.footer {
+  margin-top: 120px;
+  border-top: 1px solid var(--color-blue);
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--mantine-spacing-md);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+  }
+
+  .links {
+    margin-top: var(--mantine-spacing-lg);
+    margin-bottom: var(--mantine-spacing-sm);
+  }
+}

@@ -1,0 +1,15 @@
+
+.carouselControlsMobileHide .mantine-Carousel-controls {
+  display: flex; 
+  top: 50%;            /* vertical centering */
+  left: -60px;          /* moves left control outside */
+  right: -60px;         /* moves right control outside */
+  transform: translateY(-50%);
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .carouselControlsMobileHide .mantine-Carousel-controls {
+    display: none;
+  }
+}
