@@ -44,7 +44,9 @@ const Navbar = () => {
       }}
     >
       <div>
-        <Image src="/logo.png" height={70} fit="contain" alt="nila logo" />
+        <Link to={"/"}>
+          <Image src="/logo.png" height={70} fit="contain" alt="nila logo" />
+        </Link>
       </div>
 
       {!isMobile && (

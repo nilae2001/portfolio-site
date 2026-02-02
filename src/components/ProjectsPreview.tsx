@@ -3,49 +3,7 @@ import { Card, Image, Text, Box } from "@mantine/core";
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-
-const projects = [
-  {
-    title: "F1 2024 Season Site",
-    img: "/f1.png",
-    rationale:
-      "Web app built to provide F1 fans with real-time, clear info on races, drivers, and teams.",
-    description:
-      "Responsive web application with race data, calendar, constructor standings, and driver profiles. Features a clean, interactive UI with API integration.",
-    tech: ["JavaScript", "Express.js", "EJS", "HTML/CSS", "Axios"],
-    link: "/projects/f1",
-  },
-  {
-    title: "InkLink",
-    img: "/inklink.png",
-    rationale:
-      "A collaborative platform for writers to craft stories together in a structured way.",
-    description:
-      "React + TypeScript app with real-time note-sharing and workspace organization. Backend built with Node.js/Express and MongoDB for persistence.",
-    tech: ["React", "TypeScript", "Mantine", "Zustand", "Node.js", "MongoDB"],
-    link: "/projects/inklink",
-  },
-  {
-    title: "Joey",
-    img: "/joey.png",
-    rationale:
-      "An AI-powered mobile platform connecting underrepresented tradespeople with homeowners.",
-    description:
-      "Built with Expo/React Native and Supabase. Verifies credentials and matches clients with tradespeople, emphasizing accessibility and fairness.",
-    tech: ["React Native", "Expo", "Supabase", "Google Gemini AI"],
-    link: "/projects/joey",
-  },
-  {
-    title: "North Fraser Metis Association",
-    img: "/placeholder.png",
-    rationale:
-      "Rebuilding the NFMA website to improve accessibility, usability, and community engagement.",
-    description:
-      "Using a modern WordPress framework, focusing on accessibility, fixing the functionality of features needed for day-to-day needs, and authentic cultural representation.",
-    tech: ["WordPress", "HTML5", "CSS3", "JavaScript", "PHP", "MySQL"],
-    link: "/projects/nfma",
-  },
-];
+import projects from "../../projects.data";
 
 export default function ProjectsPreview() {
   const autoplay = useRef(Autoplay({ delay: 5000 }));
@@ -96,7 +54,7 @@ export default function ProjectsPreview() {
               >
                 <Card.Section style={{ paddingTop: "1rem" }}>
                   <Image
-                    src={project.img}
+                    src={project.coverImage}
                     height={130}
                     fit="contain"
                     alt={project.title}
@@ -109,7 +67,7 @@ export default function ProjectsPreview() {
 
                 {/* Rationale */}
                 <Text style={{ textAlign: "left", margin: "0.5rem 0" }}>
-                  {project.rationale}
+                  {project.rationale.short}
                 </Text>
 
                 {/* Key highlights */}
@@ -130,7 +88,7 @@ export default function ProjectsPreview() {
 
                 {/* Link */}
                 <Link
-                  to={project.link}
+                  to={project!.links!.internal!}
                   style={{
                     fontWeight: 700,
                     marginTop: "0.5rem",
