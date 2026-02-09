@@ -14,7 +14,6 @@ import {
 import {
   IconDownload,
   IconMail,
-  IconPhone,
   IconBrandLinkedin,
   IconSchool,
   IconBriefcase,
