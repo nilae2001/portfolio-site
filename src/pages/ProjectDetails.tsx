@@ -30,6 +30,8 @@ export default function ProjectPage() {
 
   if (!project) return <Text>Project not found.</Text>;
 
+  const isVideoPlaying = useRef(false);
+
   return (
     <>
       <Navbar />
@@ -60,7 +62,9 @@ export default function ProjectPage() {
               }}
               plugins={[autoplay.current]}
               onMouseEnter={autoplay.current.stop}
-              onMouseLeave={() => autoplay.current.play()}
+              onMouseLeave={() => {
+                if (!isVideoPlaying.current) autoplay.current.play();
+              }}
               className="project-carousel"
             >
               {project.gallery.map((item, index) => (
@@ -72,6 +76,18 @@ export default function ProjectPage() {
                       src={item.src}
                       controls
                       style={{ width: "100%", height: "100%" }}
+                      onPlay={() => {
+                        isVideoPlaying.current = true;
+                        autoplay.current.stop();
+                      }}
+                      onPause={() => {
+                        isVideoPlaying.current = false;
+                        autoplay.current.play();
+                      }}
+                      onEnded={() => {
+                        isVideoPlaying.current = false;
+                        autoplay.current.play();
+                      }}
                     />
                   )}
                 </Carousel.Slide>
