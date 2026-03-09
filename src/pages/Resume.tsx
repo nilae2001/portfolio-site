@@ -38,7 +38,7 @@ export default function ResumePage() {
             </div>
             <Button
               component="a"
-              href="/Nila_Erturk_Resume_Portfolio.pdf"
+              href="/pdf/Nila_Erturk_Resume_Portfolio.pdf"
               download
               leftSection={<IconDownload size={18} />}
               variant="filled"
